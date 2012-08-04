@@ -1,0 +1,44 @@
+﻿生成启动时间为 2012/08/01 8:24:05。
+     1>项目“C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\qball.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug.win32\qball.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I..\..\cocos2dx /I..\..\cocos2dx\include /I..\..\cocos2dx\kazmath\include /I..\..\cocos2dx\platform\win32 /I..\..\cocos2dx\platform\third_party\win32 /I..\..\cocos2dx\platform\third_party\win32\OGLES /I..\..\ /I..\..\CocosDenshion\Include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\HelloWorldScene.cpp ..\Classes\ShaderNode.cpp ..\Classes\StageScene.cpp main.cpp
+         AppDelegate.cpp
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\ccscale9sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         正在生成代码...
+         正在编译...
+         main.cpp
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\ccscale9sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\main.cpp(30): error C2059: 语法错误:“数字上的错误后缀”
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\main.cpp(30): error C2146: 语法错误: 缺少“)”(在标识符“s”的前面)
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\main.cpp(30): error C2660: “cocos2d::CCEGLView::setFrameSize”: 函数不接受 1 个参数
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\main.cpp(30): error C2059: 语法错误:“数字上的错误后缀”
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\main.cpp(30): error C2059: 语法错误:“)”
+         StageScene.cpp
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\ccscale9sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         ShaderNode.cpp
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\ccscale9sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\classes\shadernode.cpp(131): error C2059: 语法错误:“数字上的错误后缀”
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\classes\shadernode.cpp(131): error C2146: 语法错误: 缺少“)”(在标识符“s”的前面)
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\classes\shadernode.cpp(131): error C2660: “cocos2d::vertex2”: 函数不接受 1 个参数
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\classes\shadernode.cpp(131): error C2059: 语法错误:“数字上的错误后缀”
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\qball\classes\shadernode.cpp(131): error C2059: 语法错误:“)”
+         HelloWorldScene.cpp
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\ccscale9sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\platform\ccsaxparser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+         正在生成代码...
+     1>已完成生成项目“C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\qball.win32.vcxproj”(build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:15.07

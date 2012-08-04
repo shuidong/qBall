@@ -1,0 +1,35 @@
+﻿生成启动时间为 2012/08/04 12:24:42。
+     1>项目“C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\qball.win32.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release.win32\qball.win32.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I..\Classes /I..\..\cocos2dx /I..\..\cocos2dx\include /I..\..\cocos2dx\kazmath\include /I..\..\cocos2dx\platform\win32 /I..\..\cocos2dx\platform\third_party\win32 /I..\..\cocos2dx\platform\third_party\win32\OGLES /I..\..\ /I..\..\CocosDenshion\Include /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\StageScene.cpp
+         StageScene.cpp
+     1>C:\Program Files\Microsoft Visual Studio 10.0\VC\include\xlocale(323): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
+     1>c:\vcworkspace\cocos2d-2.0-rc2-x-2.0.1\cocos2dx\extensions\cccontrolextension\CCScale9Sprite.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>..\..\cocos2dx\platform/CCSAXParser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>..\..\cocos2dx\platform/CCSAXParser.h : warning C4819: 该文件包含不能在当前代码页(932)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+     1>..\Classes\StageScene.cpp(468): warning C4305: “参数”: 从“double”到“float”截断
+       ResourceCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\qball.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\\" libcocos2d.lib opengl32.lib glew32.lib libBox2d.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release.win32\qball.win32.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\qball.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\qball.win32.lib" /MACHINE:X86 Release.win32\qball.res
+         Release.win32\AppDelegate.obj
+         Release.win32\Ball.obj
+         "Release.win32\GLES-Render.obj"
+         Release.win32\HelloWorldScene.obj
+         Release.win32\ShaderNode.obj
+         Release.win32\SpriteShader.obj
+         Release.win32\StageScene.obj
+         Release.win32\main.obj
+         qball.win32.vcxproj -> C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\qball.win32.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\Release.win32\qball.win32.exe;#1" /manifest Release.win32\qball.win32.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release.win32\qball.win32.unsuccessfulbuild”。
+         正在对“Release.win32\qball.win32.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\vcWorkspace\cocos2d-2.0-rc2-x-2.0.1\qball\proj.win32\qball.win32.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.81
