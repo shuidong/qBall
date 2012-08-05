@@ -9,7 +9,7 @@
 #define BALL_R 35.0f//30
 
 #define E_INIT_V -1
-#define THROLD 0.25f//0.65
+#define THROLD 0.25f//0.25
 
 #define box2dDebug false//false
 

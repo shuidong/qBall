@@ -47,9 +47,6 @@ public:
 	int colorValueLocation;
 
 	int m_uMaskLocation;
-	int m_u2MaskLocation;
-	int m_u3MaskLocation;
-	int m_u4MaskLocation;
 	CCGLProgram *pProgram;
 };
 #endif

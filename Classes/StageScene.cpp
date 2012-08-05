@@ -75,12 +75,6 @@ bool Stage::init()
 
 		SetupWorld();
 
-		/*
-		sn = ShaderNode::shaderNodeWithVertex("Shaders/example_Flower.vsh", "Shaders/example_Flower.fsh");
-		sn->setPosition(ccp(size.width/2, size.height/2));
-		addChild(sn, -1);
-		*/
-
 		renderTexture = CCRenderTexture::create(WIN_WIDTH, WIN_HEIGHT,(CCTexture2DPixelFormat)kTexture2DPixelFormat_RGBA4444);
 		if (NULL == renderTexture)
 		{
@@ -96,38 +90,42 @@ bool Stage::init()
 			return false;
 		}
 		///
-		 //renderTexture.sprite.shaderProgram = [[CCGLProgram alloc] initWithVertexShaderByteArray:ccPositionTextureA8Color_vert
-//fragmentShaderByteArray:ccPositionTextureColorAlphaTest_frag];
 
-		 shader = new CCGLProgram();
-		 //shader->initWithVertexShaderByteArray(ccPositionTextureA8Color_vert, ccPositionTextureColorAlphaTest_frag);
-		 shader->initWithVertexShaderFilename("Shaders/mix.vsh", "Shaders/mix.fsh");
-		 renderTexture->getSprite()->setShaderProgram(shader);
-		 
-        //[renderTexture.sprite.shaderProgram addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
+		shader = new CCGLProgram();
+		shader->initWithVertexShaderFilename("Shaders/mix.vsh", "Shaders/mix.fsh");
+		
 		shader->addAttribute(kCCAttributeNamePosition, kCCVertexAttrib_Position);
-        //[renderTexture.sprite.shaderProgram addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
 		shader->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
-        //[renderTexture.sprite.shaderProgram addAttribute:kCCAttributeNameTexCoord index:kCCVertexAttrib_TexCoords];
 		shader->addAttribute(kCCAttributeNameTexCoord, kCCVertexAttrib_TexCoords);
-        
-		//[renderTexture.sprite.shaderProgram link];
-        //[renderTexture.sprite.shaderProgram updateUniforms];
 		shader->link();
 		shader->updateUniforms();
 
 		alphaValueLocation = glGetUniformLocation(shader->getProgram(), "u_alpha_value");
 		colorValueLocation = glGetUniformLocation(shader->getProgram(), "u_color_value");
+		m_uMaskLocation = glGetUniformLocation(shader->getProgram(), "u_mask");
+
 		shader->setUniformLocationWith1f(alphaValueLocation, THROLD);
 		shader->setUniformLocationWith1f(colorValueLocation, 0.0);
 		shader->use();
-        //[renderTexture.sprite.shaderProgram use];
+		renderTexture->getSprite()->setShaderProgram(shader);
+		shader->release();
 		///
-		//renderTexture->setAnchorPoint(ccp(0.0, -1));
+		pProgram = new CCGLProgram();
+		pProgram->initWithVertexShaderFilename("Shaders/mix.vsh", "Shaders/mix2.fsh");
+		pProgram->addAttribute(kCCAttributeNamePosition, kCCVertexAttrib_Position);
+		pProgram->addAttribute(kCCAttributeNameColor, kCCVertexAttrib_Color);
+		pProgram->addAttribute(kCCAttributeNameTexCoord, kCCVertexAttrib_TexCoords);
+		pProgram->link();
+		pProgram->updateUniforms();
+
+		pProgram->use();
+		mainTexture->getSprite()->setShaderProgram(pProgram);
+		pProgram->release();
+		//pProgram
+		
+
 		renderTexture->setPosition(ccp(WIN_WIDTH/2.0, WIN_HEIGHT/2.0));
 		renderTexture->retain();
-
-		//mainTexture->getSprite()->setShaderProgram(shader);
 		mainTexture->setAnchorPoint(ccp(0.5,0.5));
 		mainTexture->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
 
@@ -404,8 +402,13 @@ void Stage::update(float dt)
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
 	mainTexture->clear(0,0,0,0);
 	mainTexture->begin();
+	
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 0.0);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture( GL_TEXTURE_2D, mainTexture->getSprite()->getTexture()->getName() );
+    glUniform1i(m_uMaskLocation, 1);
+	glActiveTexture(GL_TEXTURE0);
 	mainTexture->end();
 	//
 	////
@@ -424,9 +427,16 @@ void Stage::update(float dt)
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
 	//mainTexture->clear(0,0,0,0);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture( GL_TEXTURE_2D, mainTexture->getSprite()->getTexture()->getName() );
+    glUniform1i(m_uMaskLocation, 1);
+	glActiveTexture(GL_TEXTURE0);
+
+	//mainTexture->clear(0,0,0,0);
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 1.0);
+	
 	mainTexture->end();
 	/////
 	renderTexture->clear(0,0,0,0);
@@ -447,6 +457,10 @@ void Stage::update(float dt)
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 2.0);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture( GL_TEXTURE_2D, mainTexture->getSprite()->getTexture()->getName() );
+    glUniform1i(m_uMaskLocation, 1);
+	glActiveTexture(GL_TEXTURE0);
 	mainTexture->end();
 	/////
 	renderTexture->clear(0,0,0,0);
@@ -466,6 +480,10 @@ void Stage::update(float dt)
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 3.0);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture( GL_TEXTURE_2D, mainTexture->getSprite()->getTexture()->getName() );
+    glUniform1i(m_uMaskLocation, 1);
+	glActiveTexture(GL_TEXTURE0);
 	/////
 	mainTexture->end();
 	//mainTexture->getSprite()->setScale(-0.8);
