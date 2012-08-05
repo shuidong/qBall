@@ -16,12 +16,6 @@ void main()
 	vec4 texUpColor   = texture2D(u_texture, vec2(v_texCoord.x, v_texCoord.y - 1 * unity));
 	vec4 texDnColor   = texture2D(u_texture, vec2(v_texCoord.x, v_texCoord.y + 1 * unity));
 	
-	vec4 texLfColor5 = texture2D(u_texture, vec2(v_texCoord.x - 2 * unitx, v_texCoord.y));	
-	vec4 texRtColor5 = texture2D(u_texture, vec2(v_texCoord.x + 2 * unitx, v_texCoord.y));	
-	vec4 texUpColor5   = texture2D(u_texture, vec2(v_texCoord.x, v_texCoord.y - 2 * unity));
-	vec4 texDnColor5   = texture2D(u_texture, vec2(v_texCoord.x, v_texCoord.y + 2 * unity));
-	
-	
 	float r = 	texColor.x;
 	float g = 	texColor.y;
 	float b = 	texColor.z;
@@ -35,7 +29,7 @@ void main()
 			gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
 		
 	}else{
-		a = 1.0;
-		gl_FragColor = vec4(r*a, g*a, b*a, 1);
+		float f = 0.85;//1.0 - (a-0.25)/0.75;
+		gl_FragColor = vec4(r*f, g*f, b*f, 1.0);
 	}
 }                                                             
