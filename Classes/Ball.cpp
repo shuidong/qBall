@@ -17,13 +17,14 @@ Ball::Ball()
 	//ballSprite->setScale(1.3f);
 	//ballSprite->setAnchorPoint
 	//ballSprite->setScaleX(1.1);
-	//ballSprite->setScaleY(0.9);
+	//ballSprite->setScale(0.9);
 	ballSprite->retain();
 	//ballSprite->autorelease();
 }
 
 Ball::~Ball()
 {
+	ballSprite->release();
 	m_pBody = NULL;
 	
 }
