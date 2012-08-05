@@ -433,11 +433,12 @@ void Stage::update(float dt)
 	glActiveTexture(GL_TEXTURE0);
 
 	//mainTexture->clear(0,0,0,0);
+	glBlendFunc(GL_ONE ,GL_ZERO);
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 1.0);
-	
 	mainTexture->end();
+	glBlendFunc(GL_ONE_MINUS_DST_COLOR, GL_ONE);
 	/////
 	renderTexture->clear(0,0,0,0);
 	renderTexture->begin();
@@ -454,6 +455,7 @@ void Stage::update(float dt)
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
 	//mainTexture->clear(0,0,0,0);
+	glBlendFunc(GL_ONE ,GL_ZERO);
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 2.0);
@@ -462,6 +464,7 @@ void Stage::update(float dt)
     glUniform1i(m_uMaskLocation, 1);
 	glActiveTexture(GL_TEXTURE0);
 	mainTexture->end();
+	glBlendFunc(GL_ONE_MINUS_DST_COLOR, GL_ONE);
 	/////
 	renderTexture->clear(0,0,0,0);
 	renderTexture->begin();
@@ -477,6 +480,7 @@ void Stage::update(float dt)
 	renderTexture->end();
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
+	glBlendFunc(GL_ONE ,GL_ZERO);
 	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 3.0);
@@ -486,7 +490,7 @@ void Stage::update(float dt)
 	glActiveTexture(GL_TEXTURE0);
 	/////
 	mainTexture->end();
-	//mainTexture->getSprite()->setScale(-0.8);
+	glBlendFunc(GL_ONE_MINUS_DST_COLOR, GL_ONE);
 }
 void Stage::draw()
 {
