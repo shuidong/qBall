@@ -116,8 +116,8 @@ bool Stage::init()
 		shader->link();
 		shader->updateUniforms();
 
-		 alphaValueLocation = glGetUniformLocation(shader->getProgram(), "u_alpha_value");
-		 colorValueLocation = glGetUniformLocation(shader->getProgram(), "u_color_value");
+		alphaValueLocation = glGetUniformLocation(shader->getProgram(), "u_alpha_value");
+		colorValueLocation = glGetUniformLocation(shader->getProgram(), "u_color_value");
 		shader->setUniformLocationWith1f(alphaValueLocation, THROLD);
 		shader->setUniformLocationWith1f(colorValueLocation, 0.0);
 		shader->use();
@@ -385,9 +385,6 @@ void Stage::update(float dt)
 	int positionIterations = 3;
 	//step the world
 	world->Step(dt, velocityIterations, positionIterations);
-	//int stepIdx = 0;
-	mainTexture->clear(0,0,0,0);
-	mainTexture->begin();
 	
 	///
 	renderTexture->clear(0,0,0,0);
@@ -403,14 +400,13 @@ void Stage::update(float dt)
 		(*it)->ballSprite->visit();
 	}
 	renderTexture->end();
-	//renderTexture->getSprite()->setFlipY(0.5);
-	//renderTexture->getSprite()->setFlipY(-1);
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
-	//mainTexture->setGLServerState(st);
-	
+	mainTexture->clear(0,0,0,0);
+	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 0.0);
+	mainTexture->end();
 	//
 	////
 	renderTexture->clear(0,0,0,0);
@@ -427,8 +423,11 @@ void Stage::update(float dt)
 	renderTexture->end();
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
+	//mainTexture->clear(0,0,0,0);
+	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 1.0);
+	mainTexture->end();
 	/////
 	renderTexture->clear(0,0,0,0);
 	renderTexture->begin();
@@ -444,8 +443,11 @@ void Stage::update(float dt)
 	renderTexture->end();
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
+	//mainTexture->clear(0,0,0,0);
+	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 2.0);
+	mainTexture->end();
 	/////
 	renderTexture->clear(0,0,0,0);
 	renderTexture->begin();
@@ -461,6 +463,7 @@ void Stage::update(float dt)
 	renderTexture->end();
 	renderTexture->getSprite()->setAnchorPoint(ccp(0.5, 0.5));
 	renderTexture->getSprite()->setPosition(ccp(WIN_WIDTH/2, WIN_HEIGHT/2.0));
+	mainTexture->begin();
 	renderTexture->getSprite()->visit();
 	shader->setUniformLocationWith1f(colorValueLocation, 3.0);
 	/////
